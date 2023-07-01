@@ -10,9 +10,9 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
-eval_env = gym.make("CarRacing-v2",render_mode='human',continuous=False)
-env = gym.make("CarRacing-v2",render_mode='rgb_array',continuous=False)
-EVAL=10
+env = gym.make("CarRacing-v2",render_mode='human',continuous=False)
+eval_env = gym.make("CarRacing-v2",render_mode='rgb_array',continuous=False)
+EVAL=50
 #env = gym.make("ALE/Breakout-v5",render_mode='rgb_array',obs_type="grayscale")
 #env = gym.make("ALE/Breakout-v5",render_mode='human',frameskip=3,obs_type="grayscale")
 # set up matplotlib
@@ -71,8 +71,8 @@ class DQN(nn.Module):
 BATCH_SIZE = 64
 GAMMA = 0.99
 EPS_START = 0.9
-EPS_END = 0.001
-EPS_DECAY = 10000
+EPS_END = 0.01
+EPS_DECAY = 500
 TAU = 0.05
 LR = 6e-4
 SEED=3117
